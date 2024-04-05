@@ -11,7 +11,7 @@ The **European Soccer Database** is collection of four individual CSV files:
 
 1. Create a new data set called “**Final_Excercise**” in **Google BigQuery** and load each csv file as a separate table.
 
-![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled.png)
+![Untitled](img/Untitled.png)
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%201.png)
 
