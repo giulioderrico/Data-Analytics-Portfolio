@@ -21,7 +21,7 @@ The **European Soccer Database** is collection of four individual CSV files:
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%204.png)
 
-1. Create a schema that represents the relationship between all the tables:
+2. Create a schema that represents the relationship between all the tables:
     1. For each table, PK/FK were identified.
     2. For each table, its shape is provided near the table name.
     3. When possible, the tables are linked to each other through their keys.
@@ -30,7 +30,7 @@ The **European Soccer Database** is collection of four individual CSV files:
 
 Entity Relationship Diagram made with Lucidchart, available [**here**](https://lucid.app/lucidchart/b7e16210-0654-4128-88e0-85e4b0c72f5b/edit?shared=true&page=0_0&invitationId=inv_4312c9d1-960b-4ed8-847f-aa275ec33ae7#)
 
-1. How many days have passed from the oldest **Match** to the most recent one (dataset time interval)?
+3. How many days have passed from the oldest **Match** to the most recent one (dataset time interval)?
 
 ```sql
 -- How many days have passed from the oldest Match to the most recent one (dataset time interval)?
@@ -65,7 +65,7 @@ FROM
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%207.png)
 
-1. Produce a table which, for each Season and **League** Name, shows the following statistics about the home goals scored:
+4. Produce a table which, for each Season and **League** Name, shows the following statistics about the home goals scored:
     1. min
     2. average
     3. mid-range
@@ -95,7 +95,7 @@ LIMIT 1
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%208.png)
 
-1. Find out how many unique seasons there are in the **Match** table.
+5. Find out how many unique seasons there are in the **Match** table.
 Then write a query that shows, for each Season, the number of matches played by each League. Do you notice anything out of the ordinary?
 
 > **In the Match table there are 8 unique seasons**
@@ -126,7 +126,7 @@ ORDER BY Match.season, TotMatchesPlayed DESC
 
 > We can notice that, in **season 2013/2014**, the **Belgium Jupiler League** played **only 12 matches** (it was used to play around 240 matches per season)
 
-1. Using Players as the starting point, **create a new table** (PlayerBMI) and add:
+6. Using Players as the starting point, **create a new table** (PlayerBMI) and add:
     1. a new variable that represents the players’ weight in kg (divide the mass value by 2.205) and call it kg_weight;
     2. a variable that represents the height in metres (divide the cm value by 100) and call it m_height;
     3. a variable that shows the body mass index (BMI) of the player;
@@ -172,7 +172,7 @@ WHERE ((BMI >= 18.5) AND (BMI <= 24.9))
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2012.png)
 
-1. How many players do not have an optimal BMI?
+7. How many players do not have an optimal BMI?
 
 > **863 players do not have an optimal BMI**
 
@@ -188,7 +188,7 @@ FROM `bubbly-operator-403918.Final_Exercise.PlayerBMI`
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2013.png)
 
-1. Which **Team** has scored the highest total number of goals (home + away) during the most recent available season? How many goals has it scored?
+8. Which **Team** has scored the highest total number of goals (home + away) during the most recent available season? How many goals has it scored?
 
 > Check on PK/FK JOIN between Team and Match tables. **TbTeam has 299 rows**
 > 
@@ -342,7 +342,7 @@ ORDER BY tbHomeGoals.season DESC, TotGoals DESC
 
 > Season: **2015/2016**, Team: **FC Barcelona**, TotGoals: **112**
 
-1. Create a query that, for each season, shows the name of the team that ranks first in terms of total goals scored (the output table should have as many rows as the number of seasons).
+9. Create a query that, for each season, shows the name of the team that ranks first in terms of total goals scored (the output table should have as many rows as the number of seasons).
 Which team was the one that ranked first in most of the seasons?
 
 ```sql
@@ -413,7 +413,7 @@ ORDER BY season
 
 > **Real Madrid CF** is the team that **ranked first in most of the seasons**, based on the tot goals scored.
 
-1. From the query above (question 8) create a new table (TopScorer) containing the top 10 teams in terms of total goals scored.
+10. From the query above (question 8) create a new table (TopScorer) containing the top 10 teams in terms of total goals scored.
 Then write a query that shows all the possible “pair combinations” between those 10 teams. How many “pair combinations” did it generate?
 
 ```sql
