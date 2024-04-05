@@ -15,18 +15,18 @@ The **European Soccer Database** is collection of four individual CSV files:
 
 ![Untitled1](img/Untitled1.png)
 
-![Untitled](img/Untitled 2.png)
+![Untitled](img/Untitled2.png)
 
-![Untitled](img/Untitled 3.png)
+![Untitled](img/Untitled3.png)
 
-![Untitled](img/Untitled 4.png)
+![Untitled](img/Untitled4.png)
 
 2. Create a schema that represents the relationship between all the tables:
     1. For each table, PK/FK were identified.
     2. For each table, its shape is provided near the table name.
     3. When possible, the tables are linked to each other through their keys.
 
-![Entity Relationship Diagram made with Lucidchart, available [**here**](https://lucid.app/lucidchart/b7e16210-0654-4128-88e0-85e4b0c72f5b/edit?shared=true&page=0_0&invitationId=inv_4312c9d1-960b-4ed8-847f-aa275ec33ae7#)](img/Untitled 5.png)
+![Entity Relationship Diagram made with Lucidchart, available [**here**](https://lucid.app/lucidchart/b7e16210-0654-4128-88e0-85e4b0c72f5b/edit?shared=true&page=0_0&invitationId=inv_4312c9d1-960b-4ed8-847f-aa275ec33ae7#)](img/Untitled5.png)
 
 Entity Relationship Diagram made with Lucidchart, available [**here**](https://lucid.app/lucidchart/b7e16210-0654-4128-88e0-85e4b0c72f5b/edit?shared=true&page=0_0&invitationId=inv_4312c9d1-960b-4ed8-847f-aa275ec33ae7#)
 
@@ -61,9 +61,9 @@ FROM
   `bubbly-operator-403918.Final_Exercise.imdb_match`
 ```
 
-![Untitled](img/Untitled 6.png)
+![Untitled](img/Untitled6.png)
 
-![Untitled](img/Untitled 7.png)
+![Untitled](img/Untitled7.png)
 
 4. Produce a table which, for each Season and **League** Name, shows the following statistics about the home goals scored:
     1. min
@@ -93,7 +93,7 @@ ORDER BY TotHomeGoals DESC
 LIMIT 1
 ```
 
-![Untitled](img/Untitled 8.png)
+![Untitled](img/Untitled8.png)
 
 5. Find out how many unique seasons there are in the **Match** table.
 Then write a query that shows, for each Season, the number of matches played by each League. Do you notice anything out of the ordinary?
@@ -120,9 +120,9 @@ GROUP BY Match.season, League.name
 ORDER BY Match.season, TotMatchesPlayed DESC
 ```
 
-![Untitled](img/Untitled 9.png)
+![Untitled](img/Untitled9.png)
 
-![Untitled](img/Untitled 10.png)
+![Untitled](img/Untitled10.png)
 
 > We can notice that, in **season 2013/2014**, the **Belgium Jupiler League** played **only 12 matches** (it was used to play around 240 matches per season)
 
@@ -160,7 +160,7 @@ SELECT *
 FROM PlayerBMI
 ```
 
-![Untitled](img/Untitled 11.png)
+![Untitled](img/Untitled11.png)
 
 ```sql
 -- Filter the new table to show only the players with an optimal BMI (from 18.5 to 24.9)
@@ -170,7 +170,7 @@ FROM `bubbly-operator-403918.Final_Exercise.PlayerBMI`
 WHERE ((BMI >= 18.5) AND (BMI <= 24.9))
 ```
 
-![Untitled](img/Untitled 12.png)
+![Untitled](img/Untitled12.png)
 
 7. How many players do not have an optimal BMI?
 
@@ -186,7 +186,7 @@ END)) AS TotPlayersWithUnoptimalBMI
 FROM `bubbly-operator-403918.Final_Exercise.PlayerBMI`
 ```
 
-![Untitled](img/Untitled 13.png)
+![Untitled](img/Untitled13.png)
 
 8. Which **Team** has scored the highest total number of goals (home + away) during the most recent available season? How many goals has it scored?
 
@@ -211,9 +211,9 @@ ON (Match.away_team_api_id = Team.team_api_id) --AND (Match.away_team_api_id = T
 --ORDER BY Match.home_team_api_id
 ```
 
-![Untitled](img/Untitled 14.png)
+![Untitled](img/Untitled14.png)
 
-![Untitled](img/Untitled 15.png)
+![Untitled](img/Untitled15.png)
 
 ```sql
 -- Match between tbMatch.home_team_api_id and tbTeam.team_api_id
@@ -232,7 +232,7 @@ ON (Match.home_team_api_id = Team.team_api_id) --AND (Match.away_team_api_id = T
 --ORDER BY Match.home_team_api_id
 ```
 
-![Untitled](img/Untitled 16.png)
+![Untitled](img/Untitled16.png)
 
 ```sql
 -- Match between tbMatch.away_team_api_id and tbTeam.id
@@ -252,7 +252,7 @@ ON (Match.away_team_api_id = Team.id) --AND (Match.away_team_api_id = Team.team_
 --ORDER BY Match.home_team_api_id
 ```
 
-![Untitled](img/Untitled 17.png)
+![Untitled](img/Untitled17.png)
 
 ```sql
 -- HOME
@@ -268,7 +268,7 @@ LEFT JOIN `bubbly-operator-403918.Final_Exercise.imdb_team` AS Team
 ON (Match.home_team_api_id = Team.team_api_id)
 ```
 
-![Untitled](img/Untitled 18.png)
+![Untitled](img/Untitled18.png)
 
 ```sql
 -- AWAY
@@ -284,7 +284,7 @@ LEFT JOIN `bubbly-operator-403918.Final_Exercise.imdb_team` AS Team
 ON (Match.away_team_api_id = Team.team_api_id)
 ```
 
-![Untitled](img/Untitled 19.png)
+![Untitled](img/Untitled19.png)
 
 ### ⬇️ Solution ⬇️
 
@@ -338,7 +338,7 @@ GROUP BY tbHomeGoals.season, tbHomeGoals.TeamHomeName
 ORDER BY tbHomeGoals.season DESC, TotGoals DESC
 ```
 
-![Untitled](img/Untitled 20.png)
+![Untitled](img/Untitled20.png)
 
 > Season: **2015/2016**, Team: **FC Barcelona**, TotGoals: **112**
 
@@ -409,7 +409,7 @@ WHERE RankTeam = 1
 ORDER BY season
 ```
 
-![Untitled](img/Untitled 21.png)
+![Untitled](img/Untitled21.png)
 
 > **Real Madrid CF** is the team that **ranked first in most of the seasons**, based on the tot goals scored.
 
@@ -483,7 +483,7 @@ ORDER BY tbTopTeams.season DESC, TotGoals DESC
 LIMIT 10
 ```
 
-![Untitled](img/Untitled 22.png)
+![Untitled](img/Untitled22.png)
 
 ```sql
 -- Write a query that shows all the possible “pair combinations” between those 10 teams. How many “pair combinations” did it generate?
@@ -498,6 +498,6 @@ ON TopScorer1.TeamID < TopScorer2.TeamID
 ORDER BY TopScorer1.TeamID
 ```
 
-![Untitled](img/Untitled 23.png)
+![Untitled](img/Untitled23.png)
 
 > 45 pair combinations were generated
