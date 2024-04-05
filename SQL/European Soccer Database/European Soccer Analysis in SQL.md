@@ -98,10 +98,7 @@ LIMIT 1
 1. Find out how many unique seasons there are in the **Match** table.
 Then write a query that shows, for each Season, the number of matches played by each League. Do you notice anything out of the ordinary?
 
-<aside>
-💡 **In the Match table there are 8 unique seasons**
-
-</aside>
+> **In the Match table there are 8 unique seasons**
 
 ```sql
 -- Write a query that shows, for each Season, the number of matches played by each League
@@ -127,10 +124,7 @@ ORDER BY Match.season, TotMatchesPlayed DESC
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2010.png)
 
-<aside>
-💡 We can notice that, in **season 2013/2014**, the **Belgium Jupiler League** played **only 12 matches** (it was used to play around 240 matches per season)
-
-</aside>
+> We can notice that, in **season 2013/2014**, the **Belgium Jupiler League** played **only 12 matches** (it was used to play around 240 matches per season)
 
 1. Using Players as the starting point, **create a new table** (PlayerBMI) and add:
     1. a new variable that represents the players’ weight in kg (divide the mass value by 2.205) and call it kg_weight;
@@ -140,10 +134,7 @@ ORDER BY Match.season, TotMatchesPlayed DESC
 
 How many rows does this table have?
 
-<aside>
-💡 **The PlayerBMI table has 10197 rows**
-
-</aside>
+> **The PlayerBMI table has 10197 rows**
 
 ```sql
 -- Starting from Player table, create a new table "PlayerBMI" and add kg_weight (the dataset is in lbs), m_height (the dataset is in cm), BMI
@@ -183,10 +174,7 @@ WHERE ((BMI >= 18.5) AND (BMI <= 24.9))
 
 1. How many players do not have an optimal BMI?
 
-<aside>
-💡 **863 players do not have an optimal BMI**
-
-</aside>
+> **863 players do not have an optimal BMI**
 
 ```sql
 -- How many players do not have an optimal BMI?
@@ -352,10 +340,7 @@ ORDER BY tbHomeGoals.season DESC, TotGoals DESC
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2020.png)
 
-<aside>
-💡 Season: **2015/2016**, Team: **FC Barcelona**, TotGoals: **112**
-
-</aside>
+> Season: **2015/2016**, Team: **FC Barcelona**, TotGoals: **112**
 
 1. Create a query that, for each season, shows the name of the team that ranks first in terms of total goals scored (the output table should have as many rows as the number of seasons).
 Which team was the one that ranked first in most of the seasons?
@@ -426,10 +411,7 @@ ORDER BY season
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2021.png)
 
-<aside>
-💡 **Real Madrid CF** is the team that **ranked first in most of the seasons**, based on the tot goals scored.
-
-</aside>
+> **Real Madrid CF** is the team that **ranked first in most of the seasons**, based on the tot goals scored.
 
 1. From the query above (question 8) create a new table (TopScorer) containing the top 10 teams in terms of total goals scored.
 Then write a query that shows all the possible “pair combinations” between those 10 teams. How many “pair combinations” did it generate?
@@ -518,7 +500,4 @@ ORDER BY TopScorer1.TeamID
 
 ![Untitled](European%20Soccer%20Analysis%20in%20SQL%20a48f44195c794eb9ab70c0cc524412f4/Untitled%2023.png)
 
-<aside>
-💡 45 pair combinations were generated
-
-</aside>
+> 45 pair combinations were generated
