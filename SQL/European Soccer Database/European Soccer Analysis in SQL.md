@@ -13,7 +13,7 @@ The **European Soccer Database** is collection of four individual CSV files:
 
 ![Untitled](img/Untitled.png)
 
-![Untitled1](img/Untitled 1.png)
+![Untitled1](img/Untitled1.png)
 
 ![Untitled](img/Untitled 2.png)
 
